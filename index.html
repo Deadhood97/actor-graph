@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Actor Connection Graph</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-force-graph-2d/dist/react-force-graph-2d.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <div id="ui-layer">
+        <header>
+            <h1>Voice Actor <span>Connections</span></h1>
+            <p>Exploring the shared networks of legendary voice talent</p>
+        </header>
+
+        <div id="controls">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search actor or work...">
+            </div>
+            <div class="filters">
+                <button class="filter-btn active" data-medium="all">All</button>
+                <button class="filter-btn" data-medium="Video Game">Games</button>
+                <button class="filter-btn" data-medium="Anime">Anime</button>
+                <button class="filter-btn" data-medium="Film">Film</button>
+            </div>
+        </div>
+
+        <div id="legend">
+            <div class="legend-item"><span class="dot actor"></span> Actor</div>
+            <div class="legend-item"><span class="dot work"></span> Work</div>
+        </div>
+
+        <div id="info-panel" class="hidden">
+            <button id="close-panel">×</button>
+            <div class="content">
+                <h2 id="node-name"></h2>
+                <p id="node-type"></p>
+                <div id="node-details"></div>
+                <button id="focus-btn">Focus View</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
